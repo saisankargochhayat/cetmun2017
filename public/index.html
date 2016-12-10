@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character set configuration -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport configuration, scaling options -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Hide the browser UI -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- FAVICON -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Android toolbar color -->
+    <meta name="theme-color" content="#69f0ae">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/css/wata.min.css">
+    <link rel="stylesheet" href="styles/sass/count.css">
+    <link rel="stylesheet" type="text/css" href="/styles/css/datatables.css">
+    <link rel="stylesheet" href="styles/css/main.css">
+
+    <!-- Site title -->
+    <title>RUMUN 2016</title>
+</head>
+<body>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-76072602-1', 'auto');
+            ga('send', 'pageview');
+
+</script>
+    <div id="wrapper">
+
+        <!-- The preloader we see before the whole site is loaded -->
+        <!--<div id="preloader" class="valign-wrapper">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only actually-black">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <div id="preloader" class="valign-wrapper">
+            <div class="status">
+              <img src="/GIF.gif" alt="Please wait..." />
+            </div>
+        </div>
+
+        <!-- A status spinner to indicate that some process is going on -->
+        <div id="status">
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-blue-only actually-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation bar -->
+        <div class="navbar-fixed" id="nav">
+            <nav>
+                <div class="nav-wrapper">
+
+                    <!-- Site name -->
+                    <a href="#triangles" class="brand-logo" id='logo'>RAVENSHAW UNIVERSITY <span id="model">MODEL</span> UNITED NATIONS 2016</a>
+
+                    <!-- Mobile menu button -->
+                    <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+                    <!-- Static menu -->
+                    <ul class="right hide-on-med-and-down table-of-contents">
+                      <!--<li><a href="#services">About Us</a></li>-->
+                      <li><a href="#works">Allotments</a></li>
+                      <li><a href="#blog">Committees</a></li>
+                      <li><a href="#prices">Register</a></li>
+                      <!--<li><a href="#sponsor">Sponsors</a></li>-->
+                      <li><a href="./resources/">Resources</a></li>
+
+                      <li><a href="./executive">Executive Board</a></li>
+                      <li><a href="./team/">Secretariat</a></li>
+                    </ul>
+
+                    <!-- Mobile menu, make sure it is equal to the static menu -->
+                    <ul class="side-nav" id="mobile-menu">
+                        <li><a href="#services">About Us</a></li>
+                        <li><a href="#works">Allotments</a></li>
+                        <li><a href="#blog">Committees</a></li>
+                        <li><a href="#prices">Register</a></li>
+                        <li><a href="#sponsor">Sponsors</a></li>
+                        <li><a href="./resources/">Resources</a></li>
+                        <li><a href="./executive">Executive Board</a></li>
+                        <li><a href="./team/">Team</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Triangles section -->
+        <div id="triangles" class="scrollspy">
+            <div id="output">
+                <div class="h1-wrapper valign-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m4 l4 offset-l4 offset-m4">
+                                <!-- Your company's slogan, feel free to add more tags here -->
+                                <img id='logoicon' src="http://res.cloudinary.com/winterfellws/image/upload/v1465065135/LOGO_jjwwtd.png" alt="Ravenshaw MUN" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Action button -->
+                    <a class="btn-floating btn-large waves-effect waves-dark green accent-2" id="explore">
+                        <i class="mdi-navigation-arrow-forward indigo-text text-darken-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <section class="countDown">
+            <div id="clockdiv">
+                <div>
+                    <span class="days"></span>
+                    <div class="smalltext">Days</div>
+                </div>
+                <div>
+                    <span class="hours"></span>
+                    <div class="smalltext">Hours</div>
+                </div>
+                <div>
+                    <span class="minutes"></span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div>
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            </div>
+            <script src="scripts/count.js"></script>
+        </section>
+
+        <!-- Services section -->
+        <div class="section scrollspy" id="services">
+            <div class="container">
+                <div class="row">
+                    <h2>About Us</h2>
+                    <div class="col s12 m10 offset-m1 l12">
+                        <p class="flow-text center-align">
+
+                            Ravenshaw University Model United Nations 2016 promises to be an enterprising event that proves to be a platform for simulating debate and discussion. Our conference is a platform for young adults to develop their debating prowess, logical reasoning, diplomacy and social skills. It delves deep into several issues which plague humanity, and determinedly strives to come up with innovative solutions.
+
+                        </p>
+                        <p class="flow-text center-align">
+                            The Third Edition of Ravenshaw University Model United Nations is going to be organized in collaboration with the United Nations Information Centre for India and Bhutan which in itself is a testimony of the grandeur of the conference. The prospect of dignitaries like the Governor of the State, His Excellency, Dr. S.C Jamir, Director, United Nations Information Centre for India being the few notable ones amongst the congregation of eminent personalities eager to grace the conference with their presence exalts the amplitude of the quality of our conference.
+
+
+                        </p>
+                        <p class="flow-text center-align">
+                            Ravenshaw University Model United Nations 2016 shall transpire from within the hallowed halls of the Seven Pillars of Wisdom of Ravenshaw University which shelters in its grand structure the modest chronicles of Ravenshaw’s past glory and the possibilities of its radiant future.
+
+                        </p>
+                        <p class="flow-text center-align">
+                            Hope to see you at this year’s Ravenshaw University Model UN Conference.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s12 l12">
+                    <center>
+                      <a href="ajax/works/sec.html" class="btn waves-effect waves-dark white black-text ajax-link">From the Secretary General's Desk</a>
+                    </center>
+                  </div>
+                </div>
+                <br>
+
+                <div class="int-cont">
+                  <iframe src="./slider/slider.html" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+
+        <!-- Works section -->
+        <div class="section scrollspy wide-container" id="works">
+            <div class="container">
+                <div class="row">
+                    <h2>Allotments</h2>
+                </div>
+                <div class="col s12 m10 offset-m1 l12">
+                    <p class="flow-text center-align">
+                        The 3rd Round Allotments are out.
+                    </p>
+                </div>
+                <div class="row masonry">
+                    <div class="row">
+                      <div class="col s12 l12">
+                        <center>
+                          <a href="https://drive.google.com/open?id=0B0hUNsQH8eA8QnFLRHBXczVHRDA" target="newtab" class="btn waves-effect waves-dark white black-text"><span style="font-size:1.2em" >Check Allotments</span></a>
+                        </center>
+                      </div>
+                    </div>
+                    <!-- <div class="col s12 m3 l3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div style="text-align:left; padding-left:4%">
+                                <a href="ajax/works/unwallotment.html" class=" waves-effect waves-dark white black-text ajax-link">
+                                  <h4>United Nation Women</h4>
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div style="text-align:left; padding-left:4%">
+                                <a href="ajax/works/whsallotment.html" class=" waves-effect waves-dark white black-text ajax-link">
+                                  <h4>World Humanitarian Summit</h4>
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div style="text-align:left; padding-left:4%">
+                                <a href="ajax/works/sfcallotment.html" class=" waves-effect waves-dark white black-text ajax-link">
+                                  <h4>San Francisco Conference 2016</h4>
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div style="text-align:left; padding-left:4%">
+                                <a href="ajax/works/aippmallotment.html" class=" waves-effect waves-dark white black-text ajax-link">
+                                  <h4>All India Political Parties Meet</h4>
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!--<center><h4>1st round allotments are out. Please check your email.</h4></center>-->
+                <!--<div class="row services">
+                    <div class="col s12 l4">
+
+                        <div class="divider"></div>
+
+                        <a href="ajax/works/agenda.html" class="btn waves-effect waves-dark white black-text ajax-link">Agenda</a>
+                    </div>
+
+                    <div class="col s12 l4">
+
+                        <div class="divider"></div>
+
+                        <a href="ajax/works/board.html" class="btn waves-effect waves-dark white black-text ajax-link">Executive Board</a>
+                    </div>
+                    <div class="col s12 l4">
+
+                        <div class="divider"></div>
+
+                        <a href="ajax/works/matrix.html" class="btn waves-effect waves-dark white black-text ajax-link">Country Matrix</a>
+                    </div>
+                </div>-->
+            </div>
+            <div class="wide-container" hidden=true>
+                 Shuffle grid
+                <div id="shuffle-grid" class="row">
+                    <a href="ajax/works/heisenberg-ice-cream.html" class="col s12 m6 l4 picture-item ajax-link" data-groups='["food"]'>
+                        <img src="images/works/ice-cream.png" class="responsive-img" alt="Ice cream">
+                        <h5>Heisenberg ice-cream</h5>
+                    </a>
+                    <a href="ajax/works/a-joe-book-cover.html" class="c picture-item ajax-link" data-groups='["material"]'>
+                        <img src="images/works/books.png" class="responsive-img" alt="Book cover">
+                        <h5>A. Joe book cover</h5>
+                    </a>
+                    <a href="ajax/works/wooden-series.html" class="col s12 m6 l4 picture-item ajax-link" data-groups='["digital"]'>
+                        <img src="images/works/clock.png" class="responsive-img" alt="Wooden clock">
+                        <h5>Wooden series</h5>
+                    </a>
+                    <a href="ajax/works/rubiks-triangle.html" class="col s12 m6 l4 picture-item ajax-link" data-groups='["digital", "material"]'>
+                        <img src="images/works/object.png" class="responsive-img" alt="Rubik's triangle">
+                        <h5>Rubik's triangle</h5>
+                    </a>
+                    <a href="ajax/works/old-fashioned.html" class="col s12 m6 l4 picture-item ajax-link" data-groups='["material"]'>
+                        <img src="images/works/tape.png" class="responsive-img" alt="Tape">
+                        <h5>Old fashioned</h5>
+                    </a>
+                    <a href="ajax/works/parks-and-rec.html" class="col s12 m6 l4 picture-item ajax-link" data-groups='["food", "material"]'>
+                        <img src="images/works/trees.png" class="responsive-img" alt="Trees">
+                        <h5>Parks and recreation</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+
+        <!-- Blog section -->
+        <div class="section scrollspy" id="blog">
+            <div class="container">
+                <div class="row">
+                    <h2>Committees</h2>
+                    <!-- <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <p class="flow-text center-align">
+                            Want to get a little more personal? Read our stories, meet the team and get a preview of the future
+                            products. All this and more in our blog.
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="wide-container">
+                <div class="row masonry">
+                    <div class="col s12 m5 offset-m1 l5 offset-l1">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div class="activator" style="text-align:center">
+                                  <!--<h4><br><br>The San Francisco Conference<br><br><br></h4>-->
+                                  <img src="/images/sfc.jpg" alt="The San Francisco Conference" />
+                              </div>
+                            </div>
+                            <a class="btn-floating btn-large waves-effect waves-dark green accent-2 activator">
+                                <i class="mdi-navigation-expand-less indigo-text text-darken-4"></i>
+                            </a>
+                            <div class="card-reveal">
+                                <span class="card-title black-text"><b>Agenda : </b>  <i class="mdi-navigation-expand-more right"></i></span>
+                                <p>
+                                  <b>1. Reviewing the United Nations Charter.</b>
+                                </p>
+                                <p><b>Strength: 100 Participating Countries</b></p>
+                                  <p><b>Level: Advance</b></p>
+                                <p>
+                                    The United Nations Charter Review Conference 2016 is a trademark brainchild simulation at Ravenshaw University Model United Nations 2016. Bearing in the mind the 70 long years of ramification and churning that the international geopolitical dynamics has undergone and with a new array of complex kaleidoscopic problems plaguing the humanity to its very edge, the world needs a more reformed and transparent United Nations to redressal the grievances of its Seven Billion Humans.<br>
+                                    Under the provisions laid down in the Chapter XVIII of the United Nations Charter, the Office of the Secretary-General has called for a Conference to review the United Nations Charter at Ravenshaw University Model United Nation 2016 this July with the unanimous support from the General Assembly and the Security Council.
+                                </p>
+                                <!-- <p><a href="ajax/blog-posts/new-office.html" class="ajax-link">Read the full story</a></p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m5 l5">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div class="activator" style="text-align:center">
+                                <img src="images/whs.jpg" alt="World Humanitarian Summit" />
+                              </div>
+                            </div>
+                            <a class="btn-floating btn-large waves-effect waves-dark green accent-2 activator">
+                                <i class="mdi-navigation-expand-less indigo-text text-darken-4"></i>
+                            </a>
+                            <div class="card-reveal">
+                                 <!-- <span class="card-date grey-text">June 22<sup>nd</sup>, 2015</span> -->
+                                <span class="card-title black-text"><b>Agenda : </b>  <i class="mdi-navigation-expand-more right"></i></span>
+                                <p>
+                                  <b>1. Sovereignty vs. Humanitarian Duty : Discussing the Legality of Humanitarian Interventions and Conflicts.</b>
+                                </p>
+                                <p>
+                                  <b>Strength: 120 Participating Countries</b>
+                                </p>
+                                <p><b>Level: Intermediate</b></p>
+                                <p>
+                                  The United Nations Secretary-General Ban Ki-moon has called for a global response to address the suffering of millions of women, men and children affected by humanitarian crisis. The first-ever World Humanitarian Summit is our opportunity to confront these global challenges head-on and generate greater global leadership and political will to end the conflict, alleviate suffering and reduce risk.<br>
+                                  This year, Istanbul is going to witness the largest conglomeration of the world's most powerful and the world most oppressed in a backdrop of major Sectarian conflicts, Refugee crisis and Economic meltdown, negotiating to forge a declaration to restore every human's faith in United Nation's lofty idea of " One World, One family." Something which we intend to replicate at this Brainchild Simulation of WHS at RUMUN 2016.
+                                </p>
+                                <!-- <p><a href="ajax/blog-posts/drink-milk.html" class="ajax-link">Read the full story</a></p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m5 offset-m1 l5 offset-l1">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div class="activator" style="text-align:center">
+                                <img src="/images/unw.jpg" alt="UN Women" />
+                              </div>
+                            </div>
+                            <a class="btn-floating btn-large waves-effect waves-dark green accent-2 activator">
+                                <i class="mdi-navigation-expand-less indigo-text text-darken-4"></i>
+                            </a>
+                            <div class="card-reveal">
+                                <span class="card-title black-text"><b>Agenda :</b> <i class="mdi-navigation-expand-more right"></i></span>
+                                  <p>
+                                    <b>1. Towards Gender Equality: Elimination of all forms of Violence towards Women while countering negative gender roles and stereotypes.</b>
+                                  </p>
+                                <p><b>Strength: 100 Participating Countries </b></p>
+                                  <p><b>Level: Beginner</b></p>
+                                <p>
+                                    UN Women, the United Nations Entity for Gender Equality and the Empowerment of Women was a historic step by the Member States towards accelerating goals on gender equality and the empowerment of women. The main roles of UN Women are to support inter-governmental bodies, such as the Commission on the Status of Women, in their formulation of policies, global standards and norms, to help Member States to implement these standards, often by providing suitable technical and financial support and to lead and coordinate the UN system’s work on gender equality as well as promote accountability, including through regular monitoring of system-wide progress. <br>
+                                    United Nations Women is a dynamic and strong champion for women and girls, providing them with a powerful voice at the global, regional and local levels.
+                                </p>
+                                <!-- <p><a href="ajax/blog-posts/promoting-yoga.html" class="ajax-link">Read the full story</a></p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m5 l5">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <div class="activator" style="text-align:center">
+                                <img src="/images/aippm.jpg" alt="All India Political Parties Meet" />
+                              </div>
+                            </div>
+                            <a class="btn-floating btn-large waves-effect waves-dark green accent-2 activator">
+                                <i class="mdi-navigation-expand-less indigo-text text-darken-4"></i>
+                            </a>
+                            <div class="card-reveal">
+                                <span class="card-title black-text"><b>Agenda : </b><i class="mdi-navigation-expand-more right"></i></span>
+                                  <p>
+                                    <b>1. Analysing the significance of "sedition” law in current Indian Scenario.<br>
+2. Analysing “Section 377of the Indian Penal Code” subsequent to latest developments.</b>
+                                  </p>
+                                  <p><b>Strength: 80 Political Party Representatives</b></p>
+                                  <p><b> Level: Intermediate</b></p>
+                                <p>
+                                  The All India Political Parties Meet is a replication of UN Council consisting of prominent representatives from around the country which assemble to discuss, debate and deliberate upon some of the greatest issues that the country faces today. Unlike the Lok Sabha or other Parliamentary bodies, AIPPM is not a binding committee and hence the resolutions passed here cannot be perceived in the form of laws or schemes.Some issues are just too broad and critical to be efficiently addressed in the often hectic Lok Sabha agendas. So, a committee such as AIPPM provides the representatives with a platform to address one such particular issue at a time, comprehensively and efficiently, find probable solutions and follow them up in the legislative bodies.<br>
+                                  The aim of this scrupulous committee is to come up with a guideline based elucidation after ample discussions between the representative of political parties and personalities. The solution shall take the form of an outcome (communiqué) and it shall be passed with a majority. World Humanitarian Summit 2016
+                                </p>
+                                <!-- <p><a href="ajax/blog-posts/coffee.html" class="ajax-link">Read the full story</a></p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 offset-l5">
+                  <a href="ajax/works/matrix.html" class="btn waves-effect waves-dark white black-text ajax-link">Country Matrix</a>
+              </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+
+        <!-- Get started section -->
+        <!--<div class="section grey-section" id="get-started" style="display:none">
+            <div class="container">
+                <div class="row">
+                    <h2>Like what you see?</h2>
+                    <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <p class="flow-text center-align">
+                            Let's start building your next project together. View our bundle <a href="#prices">prices</a> or get started right away.
+                        </p>
+                        <p class="center-align">
+                            <a class="waves-effect waves-light btn-large green accent-2 indigo-text text-darken-4">
+                                <i class="fa fa-rocket left"></i>Get started
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Prices section -->
+      <div class="section scrollspy" id="prices">
+        <div class="container">
+          <div class="row">
+            <h2>Register</h2>
+          </div>
+        </div>
+        <div class="wide-container">
+            <div class="row masonry">
+                <div class="col s12 m6 l3 offset-l2">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <div style="text-align:center">
+                            <a target='_blank' href="https://docs.google.com/forms/d/1JFwWS3KTm8lYLorqnzKqawZmnAEp_ztn3iXLgA29JtQ/viewform">
+                            <img src="images/del.jpg" alt="Delegates Application" />
+                            </a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3 offset-l2">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <div style="text-align:center">
+                              <!--<h4><br><br>The San Francisco Conference<br><br><br></h4>-->
+                              <a target='_blank' href="https://docs.google.com/forms/d/1i3P1NMiaJmZ3yfRtQ5DHaoPbeBKBW-nBRMpshdmpxCU/viewform?fbzx=-8367714670329940000#responses">
+                              <img src="/images/ip.jpg" alt="International Press Application" />
+                              </a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="section scrollspy">
+        <div class="container">
+          <div class="row">
+            <h2>Payments</h2>
+          </div>
+        </div>
+        <div class="wide-container">
+          <center><h4>Offline Payment Counters</h4><center>
+            <div class="row masonry">
+                <div class="col s12 m4 l4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <div style="text-align:left; padding-left:4%">
+                            <h4><u>KIIT University</u></h4>
+                            <h5>
+                              Campus Ambassadors :
+                            </h5>
+                            <h5>1. Stuti Mohanty<h5>
+                            <h5>+91 9778809872</h5>
+                            <h5>stutim96@gmail.com</h5>
+                            <br>
+                            <h5>2. Srijani Mukherjee<h5>
+                            <h5>+91 9861277165</h5>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <div style="text-align:left; padding-left:4%; height">
+                            <h4><u>Bhubaneswar</u></h4>
+                            <h5>
+                              <strong>Date</strong> : 21st April 2016
+                            </h5>
+                            <h5>
+                              <strong>Time</strong> : 4.30pm to 6.30pm
+                            </h5>
+                            <h5>
+                              <strong>Venue</strong> : KIIT Food Court ,<br>
+                              In front of KIIT International Guest House ,<br>
+                              KIIT University.
+                            </h5>
+                            <h5>
+                              <strong>Contact</strong> : +91 9438090236 (Anindya Misra)
+                            </h5>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <div style="text-align:left; padding-left:4%; height">
+                            <h4><u>Cuttack</u></h4>
+                            <h5>
+                              <strong>Date</strong> :22nd April 2016
+                            </h5>
+                            <h5>
+                              <strong>Time</strong> : 4.30pm to 6.30pm
+                            </h5>
+                            <h5>
+                              <strong>Venue</strong> : Cafe Coffee Day,<br>Ravenshaw Univeristy<br>
+                              College Square, <br> Cuttack.
+                            </h5>
+                            <h5>
+                              <strong>Contact</strong> : +91 9437598658 (Vaivab Das)
+                            </h5>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+                    <!--<div class="col s12">
+
+                        <p class="right-align currency-switcher">
+                            Choose your currency:
+                            <span class="currency-group">
+                                <input name="currency" type="radio" id="usd" checked>
+                                <label for="usd">$</label>
+                            </span>
+                            <span class="currency-group">
+                                <input name="currency" type="radio" id="eur">
+                                <label for="eur">€</label>
+                            </span>
+                        </p>
+                    </div>
+                </div> -->
+                <!--<div class="row">
+                    <div class="col s12 m4">
+                        <div class="price-container z-depth-1" id="standard">
+                            <div class="offer">Standard</div>
+                            <div class="divider"></div>
+                            <div class="price">$19</div>
+                            <ul>
+                                <li>Mobile support</li>
+                                <li>Site optimization</li>
+                                <li>SEO setup</li>
+                                <li>Subscribers</li>
+                                <li>Support tickets</li>
+                            </ul>
+                            <a class="waves-effect waves-dark white black-text btn">Choose</a>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="price-container z-depth-1 best-offer" id="professional">
+                            <div class="offer best-value">Professional</div>
+                            <div class="divider"></div>
+                            <div class="price">$49</div>
+                            <ul>
+                                <li>Mobile support</li>
+                                <li>Site optimization</li>
+                                <li>SEO setup</li>
+                                <li>Subscribers</li>
+                                <li>PHP integration</li>
+                                <li>Unlimited support</li>
+                            </ul>
+                            <a class="waves-effect waves-light green accent-2 indigo-text text-darken-4 btn">Choose</a>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="price-container z-depth-1" id="extended">
+                            <div class="offer">Extended</div>
+                            <div class="divider"></div>
+                            <div class="price">$99</div>
+                            <ul>
+                                <li>Mobile support</li>
+                                <li>Site optimization</li>
+                                <li>SEO setup</li>
+                                <li>MailChimp Subscribers</li>
+                                <li>WebGL effects</li>
+                                <li>PHP integration</li>
+                                <li>Unlimited support</li>
+                            </ul>
+                            <a class="waves-effect waves-dark white black-text btn">Choose</a>
+                        </div>
+                    </div> -->
+
+
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+
+        <!-- About section -->
+        <!--<div class="section scrollspy" id="about" style="display:none">
+            <div class="container">
+                <div class="row">
+                    <h2>Meet our Team</h2>
+                    <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <p class="flow-text center-align">
+                            Our superheroes work day and night to bring RUMUN to you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wide-container">
+                <div class="row team">
+                    <div class="col s6 m3">
+                        <div class="description-ball"></div>
+                        <div class="description center-align">
+                            <div class="row">
+                                <h4>Eva Green<br><small>UI/UX designer</small></h4>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 l6">
+                                    +1-800-78-53-02
+                                </div>
+                                <div class="col s12 l6">
+                                    <a href="mailto:eva@wata.com">eva@wata.com</a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col s12 l12 social">
+                                    <a role="button"><i class="fa fa-facebook"></i></a>
+                                    <a role="button"><i class="fa fa-behance"></i></a>
+                                    <a role="button"><i class="fa fa-deviantart"></i></a>
+                                    <a role="button"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/team/121H.jpg" class="responsive-img" alt="Ann Perkins">
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="description-ball"></div>
+                        <div class="description center-align">
+                            <div class="row">
+                                <h4>Eva Green<br><small>UI/UX designer</small></h4>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 l6">
+                                    +1-800-78-53-02
+                                </div>
+                                <div class="col s12 l6">
+                                    <a href="mailto:eva@wata.com">eva@wata.com</a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col s12 l12 social">
+                                    <a role="button"><i class="fa fa-facebook"></i></a>
+                                    <a role="button"><i class="fa fa-behance"></i></a>
+                                    <a role="button"><i class="fa fa-deviantart"></i></a>
+                                    <a role="button"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/team/166H.jpg" class="responsive-img" alt="Dick Cleverley">
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="description-ball"></div>
+                        <div class="description center-align">
+                            <div class="row">
+                                <h4>Eva Green<br><small>UI/UX designer</small></h4>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 l6">
+                                    +1-800-78-53-02
+                                </div>
+                                <div class="col s12 l6">
+                                    <a href="mailto:eva@wata.com">eva@wata.com</a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col s12 l12 social">
+                                    <a role="button"><i class="fa fa-facebook"></i></a>
+                                    <a role="button"><i class="fa fa-behance"></i></a>
+                                    <a role="button"><i class="fa fa-deviantart"></i></a>
+                                    <a role="button"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/team/93H.jpg" class="responsive-img" alt="Jonathan Edgar Doe">
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="description-ball"></div>
+                        <div class="description center-align">
+                            <div class="row">
+                                <h4>Eva Green<br><small>UI/UX designer</small></h4>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 l6">
+                                    +1-800-78-53-02
+                                </div>
+                                <div class="col s12 l6">
+                                    <a href="mailto:eva@wata.com">eva@wata.com</a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col s12 l12 social">
+                                    <a role="button"><i class="fa fa-facebook"></i></a>
+                                    <a role="button"><i class="fa fa-behance"></i></a>
+                                    <a role="button"><i class="fa fa-deviantart"></i></a>
+                                    <a role="button"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/team/172H.jpg" class="responsive-img" alt="Eva Green">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+
+
+
+
+        <!-- Contact form section -->
+        <div class="row" id="sponsor">
+            <h2>Sponsors of 2015</h2>
+         </div>
+        <section class="sponsor">
+
+            <marquee behavior="scroll" direction="left"  scrollDelay=1>
+                <img src="../images/sponsor/GO SEND GIFT.jpg" width="200" height="186" alt="Flying Bat" style="padding:0 20px;">
+                <img src="../images/sponsor/MCL.jpg" width="200" height="186" alt="Flying Bat" style="padding:0 20px;">
+                <img src="../images/sponsor/MESCO OMC.jpg" width="200" height="186" alt="Flying Bat" style="padding:0 20px;">
+                <img src="../images/sponsor/NTPC.jpg" width="200" height="186" alt="Flying Bat" style="padding:0 20px;">
+                <img src="../images/sponsor/RADIO CHOKLATE.jpg" width="200" height="186" alt="Flying Bat" style="padding:0 20px;">
+                <img src="../images/sponsor/SAMBAD.jpg" width="200" height="186" alt="Flying Bat" style="padding:0 20px;">
+                <img src="../images/sponsor/SHRI AD AGENCY copy.jpg" width="200" height="186" alt="Flying Bat" style="padding:0 20px;">
+            </marquee>
+
+        </section>
+        <div class="section scrollspy" id="contact" >
+            <div class="container">
+                <div class="row">
+                    <h2>Contact us</h2>
+                    <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <p class="flow-text center-align">
+                            We'll be glad to address your queries.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="col s12 m12 l8 offset-l2"  id="contact-form" novalidate action='#'>
+                        <!-- This field helps us avoid spam bots, don't remove it -->
+                        <div class="cant-touch-this">
+                            <input type="text" name="hammertime" tabindex="-1" value="">
+                        </div>
+                        <!-- End of anti-spam field -->
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="first-name" name="first_name" type="text" class="required">
+                                <label for="first_name">First name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last-name" name="last_name" type="text">
+                                <label for="last_name">Last name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" name="email" type="email" class="required">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="message" name="message" class="materialize-textarea required"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="center-align">
+                            <button type="submit" name='submit' class="btn-large disabled">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="wide-container">
+                <div class="row">
+                    <div class="col s12">
+                        <!-- Google map container -->
+                        <div id="map-canvas" class="map"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container contact-details">
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <h5>Address</h5>
+                        <div class="divider"></div>
+                        <address>
+                            Ravenshaw University Campus<br>Cuttack<br>Odisha - 753003
+                        </address>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <h5>Phone</h5>
+                        <div class="divider"></div>
+                        <div class="row">
+                          <div class="col s6 m6 l6">
+                              Secretary General
+                          </div>
+                          <div class="col s6 m4 l4">
+                              9090196050
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col s6 m6 l6">
+                              Deputy Secretary General
+                          </div>
+                          <div class="col s6 m4 l4">
+                              8280068114
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col s6 m6 l6">
+                              Director General
+                          </div>
+                          <div class="col s6 m4 l4">
+                              9658155067
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col s6 m6 l6">
+                              Charge De Affairs
+                          </div>
+                          <div class="col s6 m4 l4">
+                              7537854282
+                          </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col s12 m6 l4 modern-connect">
+                        <h5>Email</h5>
+                        <div class="divider"></div>
+                        <p>
+                          <a href="mailto:ravenshawmun2016@gmail.com">ravenshawmun2016@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer section -->
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2016 RUMUN | <a href="ajax/pages/privacy-policy.html" class="ajax-link">Privacy policy</a>
+
+
+                    <!-- Social icons -->
+                    <span class="social right">
+                        <a href="https://web.facebook.com/ravenshawuniversitymun/?fref=ts&_rdr" target='_blank'><i class="fa fa-facebook fa-lg"></i></a>
+                        <a href="https://www.instagram.com/ravenshawmun/" target='_blank'><i class="fa fa-instagram fa-lg"></i></a>
+
+                    </span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Ajax box container, waiting for its turn -->
+    <div id="ajax-box" class="translate"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPnsyHfLJJZTqr6s-cMTu5-rrjFS024Sg"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/build.js"></script>
+    <script src="scripts/count.js"></script>
+    <script type="text/javascript" charset="utf8" src="/scripts/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/scripts/datatables.js"></script>
+    <script type="text/javascript" src="/scripts/main.js">
+    </script>
+    <script>
+      $('#model').click(function(e){
+        e.preventDefault();
+        window.location.href = "http://www.xvideos.com/tags/model";
+      });
+    </script>
+</body>
+</html>
