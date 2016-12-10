@@ -1,4 +1,4 @@
-The official website for Ravenshaw University Model United Nations 2016.
+The official website for College of Engineering and Technology Model United Nations 2016.
 Packages used :
   Node server
   Express framework
