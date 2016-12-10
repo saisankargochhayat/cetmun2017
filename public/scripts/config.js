@@ -9,7 +9,7 @@ var Wata = {
             slices: 250
         },
         light: {
-            ambient: '#ea80fc',
+            ambient: '#9c27b0',
             diffuse: '#76ff03',
             distance: 40
         }
