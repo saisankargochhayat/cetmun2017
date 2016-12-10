@@ -6,8 +6,7 @@
     "express": "~3.4.4",
     "nodemailer": "~2.3.0",
     "body-parser": "~1.15.0",
-    "forever": "^0.15.2",
-    "nodemailer-smtp-transport": "~2.4.1"
+    "forever": "^0.15.2"
   },
   "private": true,
   "scripts": {
