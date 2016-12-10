@@ -28,6 +28,7 @@
     "express": "~3.4.4",
     "nodemailer": "~2.3.0",
     "body-parser": "~1.15.0",
+    "forever": "^0.15.2",
     "nodemailer-smtp-transport": "~2.4.1"
   },
   "devDependencies": {},
@@ -35,6 +36,6 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "forever start server.js"
   }
 }
