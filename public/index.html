@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- FAVICON -->
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="none.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Android toolbar color -->
@@ -121,6 +121,21 @@
         </div>
 
         <!-- Triangles section -->
+        <div>
+          <img id="frontimage" src="images/2.jpg" alt="" />
+          <div class="h1-wrapper valign-wrapper" style="position:absolute;min-width:100%;min-height:100%;top:5%;left:-1%;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col s12 m4 l4 offset-l4 offset-m4">
+                          <!-- Your company's slogan, feel free to add more tags here -->
+                          <img id='logoicon' src="https://res.cloudinary.com/winterfellws/image/upload/c_scale,w_550/v1481379286/mundpfinal_zcgbt6.png" alt="CET MUN" />
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+        </div>
+
         <div id="triangles" class="scrollspy">
             <div id="output">
                 <div class="h1-wrapper valign-wrapper">
@@ -883,7 +898,7 @@
                               Secretary General
                           </div>
                           <div class="col s6 m4 l4">
-                              9090196050
+                              9438613416
                           </div>
                         </div>
                         <div class="row">
@@ -891,7 +906,7 @@
                               Deputy Secretary General
                           </div>
                           <div class="col s6 m4 l4">
-                              8280068114
+                              9692105308
                           </div>
                         </div>
 
@@ -935,13 +950,17 @@
     <script src="scripts/count.js"></script>
     <script type="text/javascript" charset="utf8" src="/scripts/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="/scripts/datatables.js"></script>
-    <script type="text/javascript" src="/scripts/main.js">
-    </script>
-    <script>
-      $('#model').click(function(e){
-        e.preventDefault();
-        window.location.href = "http://www.xvideos.com/tags/model";
-      });
+    <script type="text/javascript" src="/scripts/main.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var h = $(window).height();
+        var w = $(window).width();
+        var c = $('#navbar-fixed');
+        console.log(c);
+        console.log(c.height());
+        $('#frontimage').height(h-100);
+        $('#frontimage').width(w);
+      })
     </script>
 </body>
 </html>

@@ -9,8 +9,6 @@ var app = express();
 var path = require('path');
 // Configuration
   //mailconfiguration
-//var nodemailer = require('nodemailer');
-var config = require("./mailconfig.js");
 
   //body
 var bodyParser = require("body-parser");
