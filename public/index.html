@@ -121,7 +121,7 @@
         </div>
 
         <!-- Triangles section -->
-        <div>
+        <div id='snowParent'>
           <img id="frontimage" src="images/2.jpg" alt="" />
           <div class="h1-wrapper valign-wrapper" style="position:absolute;min-width:100%;min-height:100%;top:5%;left:-1%;">
               <div class="container">
@@ -951,6 +951,7 @@
     <script type="text/javascript" charset="utf8" src="/scripts/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="/scripts/datatables.js"></script>
     <script type="text/javascript" src="/scripts/main.js"></script>
+    <script type="text/javascript" src="/scripts/canvas-snow.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         var h = $(window).height();
@@ -960,7 +961,23 @@
         console.log(c.height());
         $('#frontimage').height(h-100);
         $('#frontimage').width(w);
+        setTimeout(function() {
+            var options = {
+                flakeDensity: 1,
+                fallingSpeed: 2
+            };
+            var falling = new Blizzard('snowParent', options);
+        }, 100);
+
       })
     </script>
+    <style media="screen">
+    .falling-snow.fallback {
+      width: 100%;
+      height: 100%;
+      background-image: url('bg-snow.png');
+      background-size: 100%;
+    }
+    </style>
 </body>
 </html>
