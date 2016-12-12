@@ -33,15 +33,18 @@ app.configure('production', function(){
 
 
 //send mail function
-app.post('/sendmail',function(req,res,next){
+app.post('/contactus',function(req,res,next){
+  if(req.body.checkHuman_a + req.body.checkHuman_b != req.body.senderHuman){
+    res.send("Failure")
+  }
   console.log("Recieved sendmail request");
   //console.log(req.body);
   var mail = {
-    from : req.body.first_name + " " + req.body.last_name + " <" + req.body.email + ">" ,
-    sender : req.body.email ,
-    to : "ravenshawmun2016@gmail.com" ,
-    replyTo : req.body.email ,
-    subject : "QUERY FROM RUMUN WEBSITE" ,
+    from : req.body.senderName + " <" + req.body.senderEmail + ">" ,
+    sender : req.body.senderEmail ,
+    to : "cetmun@gmail.com" ,
+    replyTo : req.body.senderEmail ,
+    subject : "QUERY FROM CET MUN WEBSITE" ,
     text : req.body.message
   }
   console.log(mail);
