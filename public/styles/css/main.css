@@ -74,11 +74,11 @@
   width : 100%;
 }
 @font-face {
-    font-family: "Rumun";
-    src: url('/RUMUN.ttf') format("truetype");
+    font-family: "CetMun";
+    src: url('/2.ttf') format("truetype");
 }
 h1,h2, h3, h4, h5, h6 {
-  font-family: 'Rumun';
+  font-family: 'CetMun';
 }
 .error {
   display: none;
